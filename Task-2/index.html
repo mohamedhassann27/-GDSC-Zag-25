@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Taskk-2</title>
+
+        <style>
+            *{margin: 0;padding: 0;}
+            .container{
+                margin: 5rem  auto;
+                border: 1px solid orange;
+                border-radius: 3px;
+                position: relative;
+                width: 500px;
+                text-align: center;
+        
+                h1{
+                    position: absolute;
+                    top: -1.3rem;
+                    right: 50%;
+                    transform: translateX(50%);
+                    color: rgb(13, 174, 248);
+                    border: 1px solid orange;
+                    background-color:white;
+                    padding: .2rem .5rem;
+                }
+        
+                #img{
+                    max-width: 80%;
+                    margin: 3rem 0 1.5rem 0;
+                    border: 5px solid orange;
+                    width: 80%;
+                    height: 300px;
+                }
+        
+                .buttons{
+                    display: flex;
+                    justify-content: center;
+                    gap: 2rem;
+                    button{
+                        padding: .5rem 1rem;
+                        border: none;
+                        border-radius: 2px;
+                        background-color: orange;
+                        margin-bottom: 2rem;
+                        color: white;
+                        font-size: 16px;
+                    }
+                    button:nth-child(2){background-color: green;}
+                    button:nth-child(3){background-color: red;}
+                }
+            }
+
+        </style>
+</head>
+
+<body>
+    
+<div class="container">
+    <h1>Image Slider</h1>
+    <img id="img" src="./imgs/img1.webp" altt="img" class="active"></img>
+    <div class="buttons">
+        <button class="back" onclick=back()><</button>
+        <button class="play" onclick=play()>Play</button>
+        <button class="stop" onclick=stop()>Stop</button>
+        <button class="next" onclick=next()>></button>
+    </div>
+</div>
+
+<script>
+
+    const imgs=["./imgs/img1.webp","./imgs/img2.jpg","./imgs/img3.jpg","./imgs/img4.jpeg"]
+    let i=0;
+
+
+    let next=()=>{
+            i++;
+            if(i>=imgs.length) i=0;
+            img.src=imgs[i];
+    }
+
+    let back=()=>{
+            i--;
+            if(i<0) i=imgs.length-1 ;
+            img.src=imgs[i];     
+    }
+
+    img.addEventListener("transitionend",()=> img.classList.remove("active"))
+
+    let interval;
+    const play=()=>{
+        if(!interval) interval=setInterval(next,3000)
+    }
+
+    const stop=()=>{
+        clearInterval(interval);
+        interval=null;
+    }
+
+    interval=setInterval(next,3000);
+    img.onmouseover=()=>clearInterval(interval);
+    img.onmouseout=()=> interval=setInterval(next,3000);
+
+</script>
+</body>
+</html>
