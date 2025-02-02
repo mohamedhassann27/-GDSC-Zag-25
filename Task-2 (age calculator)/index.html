@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="inputsContainer">
+            <div>
+                <label for="dayInput">DAY</label> 
+                <input type="number" id="dayInput" placeholder="DD" max="31" min="0" required> 
+                <p for="yearInput">This field is required</p>
+            </div>
+
+            <div>
+                <label for="monthInput">MONTH</label> 
+                <input type="number" id="monthInput" placeholder="MM" max="12" min="0" required>
+                <p for="yearInput">This field is required</p>
+            </div>
+
+            <div>
+                <label for="yearInput">YEAR</label> 
+                <input type="number" id="yearInput" placeholder="YYYY" max="2004" min="0" required>
+                <p for="yearInput">This field is required</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="results">
+            <span class="arrow">↓</span>
+            <p id=""> <span id="yearsResult" >--</span> years</p>
+            <p id=""> <span id="monthsResult">--</span> months</p>
+            <p id=""> <span id="daysResult">--</span> days</p>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
