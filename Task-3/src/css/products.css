@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px,1fr) );
+    gap: 2rem;
+    text-align: start;
+    .product{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        /* align-items: center; */
+        background-color: white;
+        color: black;
+        padding: 1.5rem 1rem;
+        border-radius: 10px;
+
+        h2{height: 40px;overflow: hidden;text-align: center;}
+        p{height: 102px;overflow: hidden;text-align: center;}
+        img{
+            max-width: 100%;
+            width: 150px;
+            height: 150px;
+            margin: auto;
+        }
+
+        .price{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            span.lastPrice{color:red;text-decoration: line-through;margin-right: .5rem;}
+        }
+        
+    }
+}
+
+

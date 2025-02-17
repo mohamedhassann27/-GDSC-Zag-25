@@ -1,0 +1,9 @@
+.categories{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    gap: 1rem;
+    
+    button{color: black; background-color: white;}
+}
