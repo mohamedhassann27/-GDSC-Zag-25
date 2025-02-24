@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Advice{
+    width: 90%;
+    max-width:570px;
+    background-color: hsl(217, 19%, 24%);
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    font-family: "Poppins" , sans-serif;
+    h4{
+        color: hsl(150, 100%, 66%);
+        span{margin-right: .5rem;}
+    }
+    h2{
+        margin: 1rem 0;
+    }
+    img{max-width: 100%;}
+    .divider{margin: 1rem 0;}
+    .icon{
+        position: absolute;
+        bottom: -1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: hsl(150, 100%, 66%);
+        padding: .5rem;
+        width: 3rem;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
