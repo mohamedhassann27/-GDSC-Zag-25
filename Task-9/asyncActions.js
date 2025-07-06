@@ -1,6 +1,4 @@
-
-const redux= require("redux")
-const createStore= redux.createStore;
+const { createStore, combineReducers} = require("redux")
 const initialState={
     loading: true,
     data: [],
@@ -54,3 +52,25 @@ const reducer= (state= initialState, action)=>{
 }
 
 const store= createStore(reducer)
+console.log(store.getState())
+
+
+
+
+// const { thunk } = require("redux-thunk")
+// const fetchUsers= ()=>{
+//     return async function(dispatch){
+//         dispatch(fetchUsersRequest())
+//         try{
+//             const response=await fetch("https://jsonplaceholder.typicode.com/users/1")
+//             let data= await response.json()
+//             dispatch(fetchUsersSuccess(data))
+//         }catch (error){
+//             dispatch(fetchUsersFailure(error.message))
+//         }
+//     }
+// }
+
+// let store= createStore(reducer, applyMiddleware(thunk))
+// store.dispatch(fetchUsers())
+// store.subscribe(()=>console.log(store.getState()))
